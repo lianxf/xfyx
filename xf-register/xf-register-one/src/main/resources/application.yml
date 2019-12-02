@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: @artifactId@
+  security:
+    user:
+      name: xfyx
+      password: xfyx
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://xfyx:xfyx@localhost:${server.port}/eureka/

@@ -1,0 +1,13 @@
+server:
+  port: 8073
+
+spring:
+  application:
+    name: service-wchat
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://xfyx:xfyx@localhost:8081/eureka/
+

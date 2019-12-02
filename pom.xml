@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.zjxinfengshiye.admin</groupId>
+    <artifactId>xinfengyixing</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>xf-admin</name>
+    <description>鑫峰易行后台</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <xf.commons.version>1.0.0</xf.commons.version>
+        <xf.admin.version>0.0.1-SNAPSHOT</xf.admin.version>
+
+        <qianmi.version>20181227</qianmi.version>
+
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+
+        <objenesis.version>3.0.1</objenesis.version>
+        <javassist.version>3.25.0-GA</javassist.version>
+        <guava.version>28.0-jre</guava.version>
+        <jsr305.version>3.0.2</jsr305.version>
+        <bcpkix.version>1.62</bcpkix.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--  项目版本  -->
+            <dependency>
+                <groupId>com.zjxinfengshiye.admin</groupId>
+                <artifactId>xinfengyixing</artifactId>
+                <version>${xf.admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zjxinfengshiye.admin</groupId>
+                <artifactId>xf-register-one</artifactId>
+                <version>${xf.admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zjxinfengshiye.admin</groupId>
+                <artifactId>service-admin</artifactId>
+                <version>${xf.admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zjxinfengshiye.admin</groupId>
+                <artifactId>service-app</artifactId>
+                <version>${xf.admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zjxinfengshiye.admin</groupId>
+                <artifactId>service-wchat</artifactId>
+                <version>${xf.admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zjxinfengshiye.admin</groupId>
+                <artifactId>service-getway</artifactId>
+                <version>${xf.admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zjxinfengshiye.admin</groupId>
+                <artifactId>common-service</artifactId>
+                <version>${xf.admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zjxinfengshiye.boot</groupId>
+                <artifactId>commons-boot</artifactId>
+                <version>${xf.commons.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zjxinfengshiye.commons</groupId>
+                <artifactId>commons-core</artifactId>
+                <version>${xf.commons.version}</version>
+            </dependency>
+
+            <!--  =========================  -->
+
+            <!--中石油千米API依赖-->
+            <dependency>
+                <groupId>com.qianmi.open.api</groupId>
+                <artifactId>bm-elife-api-sdk-java</artifactId>
+                <version>${qianmi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.objenesis</groupId>
+                <artifactId>objenesis</artifactId>
+                <version>${objenesis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>${javassist.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>${jsr305.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk15on</artifactId>
+                <version>${bcpkix.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>local</id>-->
+<!--            <url>http://39.104.99.211:8081/repository/maven-public/</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>xf-register</module>
+        <module>service-wchat</module>
+        <module>service-admin</module>
+        <module>service-app</module>
+        <module>service-getway</module>
+        <module>common-service</module>
+    </modules>
+
+</project>
