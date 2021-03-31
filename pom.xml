@@ -27,7 +27,7 @@
 
         <objenesis.version>3.0.1</objenesis.version>
         <javassist.version>3.25.0-GA</javassist.version>
-        <guava.version>28.0-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <jsr305.version>3.0.2</jsr305.version>
         <bcpkix.version>1.62</bcpkix.version>
     </properties>
